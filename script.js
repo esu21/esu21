@@ -5,25 +5,27 @@ toggle.addEventListener("click", () => {
   const open = menu.classList.toggle("open");
   toggle.setAttribute("aria-expanded", open);
 });
-menu.querySelectorAll("a").forEach((a) =>
-  a.addEventListener("click", () => {
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && menu.classList.contains("open")) {
     menu.classList.remove("open");
     toggle.setAttribute("aria-expanded", "false");
-  })
-);
+    toggle.focus();
+  }
+});
 
-document.getElementById("year").textContent = new Date().getFullYear();
+document.querySelectorAll(".year").forEach((el) => (el.textContent = new Date().getFullYear()));
 
 // Show a message after contact.php redirects back with ?sent=1 or ?sent=0
+const form = document.querySelector(".contact-form");
 const sent = new URLSearchParams(location.search).get("sent");
-if (sent !== null) {
-  const form = document.querySelector(".contact-form");
+if (form && sent !== null) {
   const note = document.createElement("p");
   note.className = "form-status " + (sent === "1" ? "ok" : "err");
   note.setAttribute("role", "status");
+  note.setAttribute("tabindex", "-1");
   note.textContent = sent === "1"
-    ? "Thank you! Your message was sent. We'll be in touch within one business day."
-    : "Sorry, your message couldn't be sent. Please email or call us directly.";
+    ? "Thank you! Your request was sent. We will contact you within one business day to schedule your free consultation."
+    : "Sorry, your request could not be sent. Please call 720-453-6187 or email Info@MRDBenefitsConsulting.com.";
   form.prepend(note);
-  document.getElementById("contact").scrollIntoView();
+  note.focus();
 }

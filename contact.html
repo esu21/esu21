@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | MRD Benefits Consulting</title>
+  <meta name="description" content="Request a free 15-30 minute consultation with MRD Benefits Consulting by phone, Microsoft Teams, or Zoom.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="assets/favicon.svg" alt="" width="40" height="40">
+        <span>MRD <strong>Benefits Consulting</strong></span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <nav id="nav-menu" class="nav-menu" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services &amp; Pricing</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="policies.html">Policies</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="page-head">
+      <div class="container">
+        <h1>Request a Free Consultation</h1>
+        <p class="lead">A free 15&ndash;30 minute call to understand your question and see whether it fits our educational service. It is not an eligibility determination, insurance recommendation, or legal consultation.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div>
+          <h2>Reach us directly</h2>
+          <ul class="contact-list">
+            <li><strong>Phone:</strong> <a href="tel:+17204536187">720-453-6187</a></li>
+            <li><strong>Email:</strong> <a href="mailto:Info@MRDBenefitsConsulting.com">Info@MRDBenefitsConsulting.com</a></li>
+            <li><strong>Mail:</strong> PO Box 110351, Aurora, CO 80042</li>
+            <li><strong>Appointments:</strong> Phone, Microsoft Teams, or Zoom</li>
+          </ul>
+          <div class="warning" role="note">
+            <h3>Protect your information</h3>
+            <p>Please do <strong>not</strong> include your Social Security number, Medicare number, passwords, medical records, or government-account information in this form or in any email or text message.</p>
+          </div>
+        </div>
+        <form class="contact-form" action="contact.php" method="post">
+          <p class="form-hint">Fields marked &ldquo;required&rdquo; must be filled in.</p>
+          <label for="f-name">Name (required)</label>
+          <input id="f-name" type="text" name="name" required autocomplete="name">
+          <label for="f-email">Email (required)</label>
+          <input id="f-email" type="email" name="email" required autocomplete="email">
+          <label for="f-phone">Phone</label>
+          <input id="f-phone" type="tel" name="phone" autocomplete="tel">
+          <label for="f-state">State where you will be during the appointment (required)</label>
+          <input id="f-state" type="text" name="state" required autocomplete="address-level1">
+          <label for="f-contact">Best way to reach you</label>
+          <select id="f-contact" name="contact_method">
+            <option>Phone call</option>
+            <option>Email</option>
+            <option>Microsoft Teams</option>
+            <option>Zoom</option>
+          </select>
+          <label for="f-interest">Service you&rsquo;re interested in</label>
+          <select id="f-interest" name="interest">
+            <option>Not sure yet</option>
+              <option>Retirement Education Session</option>
+              <option>Medicare Education Session - Regular or On-Time Enrollment</option>
+              <option>Medicare Education Session - Special Enrollment Period (SEP)</option>
+              <option>Combined Medicare SEP and Retirement Package</option>
+              <option>Survivor Education Session</option>
+              <option>SSI or SSDI Coaching and Application Preparation</option>
+              <option>Other Approved Assistance</option>
+            <option>Workshop for an organization</option>
+          </select>
+          <label for="f-msg">Briefly, how can we help? (required)</label>
+          <textarea id="f-msg" name="message" rows="5" required aria-describedby="f-msg-hint"></textarea>
+          <p id="f-msg-hint" class="form-hint">Please share general information only &mdash; no ID numbers or medical details.</p>
+          <label for="f-acc">Accommodations or interpreter needed</label>
+          <input id="f-acc" type="text" name="accommodations">
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Leave this field blank</label>
+            <input id="f-website" type="text" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <button type="submit" class="btn">Send Request</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">MRD Benefits Consulting LLC</p>
+        <p>Clear guidance for understanding your benefits options.</p>
+        <address>
+          PO Box 110351<br>Aurora, CO 80042<br>
+          Phone: <a href="tel:+17204536187">720-453-6187</a><br>
+          Email: <a href="mailto:Info@MRDBenefitsConsulting.com">Info@MRDBenefitsConsulting.com</a>
+        </address>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="policies.html#disclaimer">Disclaimer</a></li>
+          <li><a href="policies.html#privacy">Privacy</a></li>
+          <li><a href="policies.html#cancellation">Cancellation &amp; Refunds</a></li>
+          <li><a href="policies.html#accessibility">Accessibility</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="container">
+      <p class="small">MRD Benefits Consulting is an independent private business. It is not affiliated with, endorsed by, or acting on behalf of the Social Security Administration, the Centers for Medicare &amp; Medicaid Services, Medicare, any insurance company, or any government agency. MRD does not sell or recommend insurance, does not enroll anyone in Medicare plans, does not determine eligibility, and does not provide legal, tax, financial, medical, or insurance advice.</p>
+      <p class="small">&copy; <span class="year">2026</span> MRD Benefits Consulting LLC. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
