@@ -42,7 +42,7 @@ Every push to the deployed branch updates the live site.
    - **Content type:** `application/x-www-form-urlencoded` (default)
    - **Events:** *Just the push event* → **Add webhook**
 5. Check it: visit the site, then push a small change and confirm it appears within a minute.
-   Also confirm `https://MRDBenefitsConsulting.com/.git/config` , `/README.md` and `/CLAUDE.md` return "Not Found"
+   Also confirm `https://MRDBenefitsConsulting.com/.git/config`, `/README.md` and `/CLAUDE.md` return "Not Found"
    (`.htaccess` blocks them).
 6. Recommended: hPanel → **Security → SSL** → make sure SSL is active and turn on **Force HTTPS**.
 
