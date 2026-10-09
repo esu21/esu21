@@ -1,4 +1,4 @@
 # Hide repository files that hPanel Git deployment copies into public_html.
 # (.well-known stays reachable so SSL certificate checks keep working.)
 RedirectMatch 404 /\.(?!well-known)
-RedirectMatch 404 ^/README\.md$
+RedirectMatch 404 ^/(README|CLAUDE)\.md$
