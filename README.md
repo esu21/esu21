@@ -23,9 +23,33 @@ Shared files: `styles.css`, `script.js`, `assets/favicon.svg`.
 4. Update the "Last reviewed" date on `resources.html` whenever you re-check it.
 5. Test every page with JAWS and keyboard only.
 
-## Upload to Hostinger
+## Deploy to Hostinger
+
+### Automatic (hPanel Git, recommended)
+Every push to the deployed branch updates the live site.
+
+1. **Empty `public_html` first.** hPanel → **Websites** → *MRDBenefitsConsulting.com* → **Dashboard** →
+   **File Manager** → `public_html`, then delete everything in it (e.g. `default.php`). Git deployment
+   only works into an empty folder.
+2. hPanel → **Websites** → *MRDBenefitsConsulting.com* → **Advanced → Git** → **Create a New Repository**:
+   - **Repository:** `https://github.com/esu21/esu21.git` (public, so no SSH key is needed)
+   - **Branch:** `claude/focused-johnson-db8qgp` (or `main` once one exists)
+   - **Directory:** leave blank (deploys to `public_html`)
+   - Click **Create**, then **Deploy** once to pull the site.
+3. Turn on auto-deployment: in the same Git page, click **Auto Deployment** and copy the **Webhook URL**.
+4. On GitHub: **github.com/esu21/esu21 → Settings → Webhooks → Add webhook**
+   - **Payload URL:** the webhook URL from step 3
+   - **Content type:** `application/x-www-form-urlencoded` (default)
+   - **Events:** *Just the push event* → **Add webhook**
+5. Check it: visit the site, then push a small change and confirm it appears within a minute.
+   Also confirm `https://MRDBenefitsConsulting.com/.git/config` and `/README.md` return "Not Found"
+   (`.htaccess` blocks them).
+6. Recommended: hPanel → **Security → SSL** → make sure SSL is active and turn on **Force HTTPS**.
+
+If the site ever stops updating, open **Advanced → Git** and click **Deploy** manually; the deployment
+log there shows any error.
+
+### Manual
 1. hPanel → **Websites** → your site → **File Manager** → `public_html`.
 2. Delete the default `default.php` / `index.php` if present.
-3. Upload all `.html` files, `styles.css`, `script.js`, `contact.php`, and the `assets` folder.
-
-Optional: hPanel → **Advanced → Git** can deploy this repository to `public_html` automatically.
+3. Upload all `.html` files, `styles.css`, `script.js`, `contact.php`, `.htaccess`, and the `assets` folder.
